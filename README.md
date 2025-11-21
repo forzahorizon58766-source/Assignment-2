@@ -1,9 +1,7 @@
 # Assignment-2
 O.S
 
-# Operating Systems Lab-5: Process Management & Compilation Pipeline
 
-This repository demonstrates fundamental OS concepts including process creation, compilation workflow, and the roles of linkers and loaders in program execution.
 
 ## Contents Overview
 

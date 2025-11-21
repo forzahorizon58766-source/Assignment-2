@@ -62,13 +62,6 @@ make simple_program
 
 **Source:** `process_creation.c`
 
-Demonstrates process duplication using fork(), showing how one program spawns a second independent process.
-
-**Functionality:**
-- Invokes fork() to duplicate the current process
-- Parent and child each display their unique process identifiers
-- Shows parallel execution of related processes
-
 **Execute:**
 ```bash
 ./process_creation
@@ -83,8 +76,6 @@ This is the child process. PID: [child_id]
 ### Part 5: Multi-File Linking
 
 **Sources:** `file1.c`, `file2.c`
-
-Illustrates separate compilation where the linker connects code across multiple files.
 
 **Functionality:**
 - `file1.c` implements the hello() function
@@ -105,9 +96,6 @@ Hello from file1!
 
 **Source:** `simple_program.c`
 
-A basic program that demonstrates which libraries the OS loader brings into memory.
-
-
 **Execute:**
 ```bash
 ./simple_program
@@ -119,8 +107,6 @@ ldd simple_program
 This is a simple program.
 ```
 
-Running `ldd` reveals the dynamic libraries the loader will use.
-
 ## Compilation Pipeline Explained
 
 ### Linker Overview
@@ -128,15 +114,10 @@ Running `ldd` reveals the dynamic libraries the loader will use.
 The linker merges compiled object files into a working executable.
 
 
-
-**Illustration:** The files file1.c and file2.c compile to separate objects. The linker combines them and resolves file2.c's reference to hello() by connecting it to file1.c's definition.
-
 ### Loader Overview
 
 The loader is the OS subsystem that brings programs from disk into executing memory.
 
-
-**Illustration:** Running `./simple_program` causes the loader to allocate memory, load dependencies (visible through ldd), and begin program execution.
 
 ## Compilation Instructions
 

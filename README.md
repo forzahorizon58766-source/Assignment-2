@@ -3,39 +3,13 @@ O.S
 
 
 
-## Contents Overview
 
-- [Project Overview](#project-overview)
-- [Setup Requirements](#setup-requirements)
-  - [System Requirements](#system-requirements)
-  - [Setup Instructions](#setup-instructions)
-- [Running the Code](#running-the-code)
-- [Programming Exercises](#programming-exercises)
-  - [Part 1: fork() System Call](#part-1-fork-system-call)
-  - [Part 5: Multi-File Linking](#part-5-multi-file-linking)
-  - [Part 6: Dynamic Loading](#part-6-dynamic-loading)
-- [Compilation Pipeline Explained](#compilation-pipeline-explained)
-  - [Linker Overview](#linker-overview)
-  - [Loader Overview](#loader-overview)
-- [Compilation Instructions](#compilation-instructions)
-- [Project License](#project-license)
 
-## Project Overview
-
-Lab-5 explores core operating system concepts through practical C programming:
-- Creating processes with the fork() system call
-- Multi-stage compilation from source to executable
-- Linker functionality in resolving symbols across files
-- Loader's role in preparing programs for execution
-- Automated builds using Makefiles
-
-## Setup Requirements
 
 ### System Requirements
 
-You'll need the following tools:
+we need the following tools:
 - **GCC Compiler**: For compiling C source code
-- **Unix-like OS**: Programs rely on POSIX APIs
 
 Installing GCC on Debian-based systems:
 ```bash
@@ -135,9 +109,6 @@ Hello from file1!
 
 A basic program that demonstrates which libraries the OS loader brings into memory.
 
-**Functionality:**
-- Displays a message and exits
-- Use with `ldd` to inspect loaded libraries
 
 **Execute:**
 ```bash
@@ -158,11 +129,7 @@ Running `ldd` reveals the dynamic libraries the loader will use.
 
 The linker merges compiled object files into a working executable.
 
-**Core Tasks:**
-1. **Symbol Matching**: Links function calls to their definitions throughout the codebase
-2. **Address Finalization**: Assigns actual memory addresses to all code and data
-3. **Library Connection**: Integrates required external libraries
-4. **Error Reporting**: Flags unresolved or conflicting symbols
+
 
 **Illustration:** The files file1.c and file2.c compile to separate objects. The linker combines them and resolves file2.c's reference to hello() by connecting it to file1.c's definition.
 

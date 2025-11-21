@@ -1,0 +1,113 @@
+
+Exercise 1: Using fork() in C
+===========================================
+
+Code:
+------
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        printf("This is the child process. PID: %d\n", getpid());
+    } else if (pid > 0) {
+        printf("This is the parent process. PID: %d\n", getpid());
+    } else {
+        printf("Fork failed!\n");
+    }
+
+    return 0;
+}
+
+Explanation:
+------------
+- fork() is a system call that creates a new process (child) by duplicating the calling process (parent)
+- Return values:
+  * 0 = in child process
+  * >0 (child's PID) = in parent process
+  * -1 = fork failed
+- getpid() returns the process ID of the current process
+- This demonstrates how a process splits into two separate execution flows
+
+Compilation:
+------------
+gcc process_creation.c -o process_creation
+./process_creation
+
+
+Exercise 5: Role of the Linker
+===========================================
+
+File 1: file1.c
+----------------
+#include <stdio.h>
+
+void hello() {
+    printf("Hello from file1!\n");
+}
+
+File 2: file2.c
+----------------
+void hello();
+
+int main() {
+    hello();
+    return 0;
+}
+
+Explanation:
+------------
+- file1.c defines a function hello() that prints a message
+- file2.c declares the hello() function and calls it from main()
+- The linker combines object files from both C files into one executable
+- Without linking, main() in file2.c wouldn't know where hello() is defined
+
+Compilation & Linking:
+----------------------
+gcc file1.c file2.c -o output_program
+./output_program
+
+
+Exercise 6: Role of the Loader
+===========================================
+
+Code:
+------
+#include <stdio.h>
+
+int main() {
+    printf("This is a simple program.\n");
+    return 0;
+}
+
+Explanation:
+------------
+- Simple program that prints a message
+- The loader loads the executable into memory and resolves shared library dependencies at runtime
+- ldd command lists dynamic libraries required by the program
+
+Compilation & Inspection:
+-------------------------
+gcc simple_program.c -o simple_program
+ldd simple_program
+
+Example ldd output:
+-------------------
+linux-vdso.so.1
+libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6
+/lib64/ld-linux-x86-64.so.2
+
+
+
+Summary of Key Concepts:
+===========================================
+
+fork()    - Creates new process. Returns 0 in child, PID in parent
+Linker    - Combines multiple object files into one executable
+Loader    - Loads executable and shared libraries into memory
+ldd       - Lists dynamic dependencies of an executable
+jobs      - Lists running background processes
+kill      - Sends signals to processes (stop, terminate, continue)
+ps        - Displays information about running processes

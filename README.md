@@ -58,8 +58,6 @@ make output_program
 make simple_program
 ```
 
-## Programming Exercises
-
 ### Part 1: fork() System Call
 
 **Source:** `process_creation.c`
@@ -137,11 +135,6 @@ The linker merges compiled object files into a working executable.
 
 The loader is the OS subsystem that brings programs from disk into executing memory.
 
-**Core Tasks:**
-1. **Memory Allocation**: Reads executables and allocates appropriate memory space
-2. **Library Loading**: Brings in shared libraries the program needs
-3. **Address Fixup**: Adjusts addresses based on actual load location
-4. **Startup Configuration**: Prepares stack, arguments, and environment before execution
 
 **Illustration:** Running `./simple_program` causes the loader to allocate memory, load dependencies (visible through ldd), and begin program execution.
 

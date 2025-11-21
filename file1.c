@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 void hello() {
-    printf("Ezio *o*");
+    printf("Ezio *o* \n");
 }
 

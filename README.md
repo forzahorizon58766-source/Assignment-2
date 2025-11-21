@@ -203,8 +203,3 @@ ldd simple_program
 
 Licensed under the MIT License - refer to the [LICENSE](LICENSE) file for complete terms.
 
----
-
-**Developer:** OS Lab Assignment  
-**Subject Area:** Operating Systems & System Programming  
-**Objective:** Hands-on exploration of process management and compilation
